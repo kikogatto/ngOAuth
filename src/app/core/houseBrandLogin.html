@@ -1,0 +1,16 @@
+<form ng-submit="login()" novalidate name='loginForm'>
+    <div ng-if='error' class='text-danger'>Dados incorretos!</div>
+    <div ng-if="!emailSent">
+        <div class="form-group">
+            <input type="email" class="form-control" ng-model="loginData.Email" name='email' placeholder="Email" required >
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" ng-model="loginData.Password" placeholder="Senha" required ng-minlength="6">
+            <a href="" ng-click='forgotpassword()' class='pull-right small' style='margin-top: -25px; margin-right:10px;'>Esqueceu ?</a>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control" moody-click='login()'>{{loginButton.label}}</button>
+        </div>
+    </div>
+    <div ng-if="emailSent" style="padding:10px" class="alert-success">Foi enviado um e-mail para o endereço {{loginData.Email}} com as instruções para trocar sua senha.</div>
+</form>

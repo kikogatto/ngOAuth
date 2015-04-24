@@ -1,0 +1,11 @@
+<form ng-submit="login()" novalidate name='loginForm'>
+    <div ng-if='error' class='text-danger'>Dados incorretos!</div>
+    <div >
+        <div class="form-group">
+            <select ng-options="user as user.username for user in users" ng-model="selectedUser">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control" moody-click='login()'>{{loginButton.label}}</button>
+        </div>
+    </div>
+</form>
